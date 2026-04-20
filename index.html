@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Descubra seu nível de TikToker e ganhe prêmios exclusivos!" />
+<meta property="og:title" content="Quiz TikTok — Descubra seu nível" />
+<meta property="og:description" content="Descubra seu nível de TikToker e ganhe prêmios exclusivos!" />
+<title>Quiz TikTok — Descubra seu nível e ganhe prêmios</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="bg-gradient"></div>
+<div class="bg-floats" id="bgFloats"></div>
+
+<main class="app">
+  <!-- LANDING -->
+  <section id="landing" class="stage active">
+    <div class="logo-wrap">
+      <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <text x="50%" y="58%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="78" fill="#25F4EE" filter="url(#glow)" transform="translate(-3,0)">d</text>
+        <text x="50%" y="58%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="78" fill="#FE2C55" filter="url(#glow)" transform="translate(3,0)">d</text>
+        <text x="50%" y="58%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="78" fill="#fff">d</text>
+      </svg>
+    </div>
+
+    <div class="card glow-magenta center">
+      <div class="live-pill">
+        <span class="dot"></span>
+        <span id="playingCount">2.847</span> jogando agora
+      </div>
+      <h1 class="title-xl">
+        <span class="grad-tiktok">Você é viciado no TikTok?</span> 🎵
+      </h1>
+      <p class="muted small">
+        Descubra seu nível de tiktoker e
+        <span class="pink-bold">ganhe prêmios exclusivos!</span>
+      </p>
+      <div class="pills">
+        <span class="pill orange">🔥 8 Perguntas</span>
+        <span class="pill pink">🎁 Produtos Grátis</span>
+      </div>
+      <div class="reward-row">
+        <div class="reward-icon">🏆</div>
+        <div class="reward-text">
+          <p class="bold sm">Recompensa Garantida</p>
+          <p class="tiny muted">Complete o quiz e ganhe produtos incríveis</p>
+        </div>
+        <div class="reward-tag">⭐ Nível 1</div>
+      </div>
+      <p class="tiny muted center mb">⏱️ Tempo estimado: 2 minutos</p>
+      <button class="cta-btn pulse" id="startBtn">🎮 COMEÇAR AGORA!</button>
+      <div class="trust-row">
+        <span><span class="gold">★★★★★</span> <b>4.9</b></span>
+        <span>•</span><span>+50.000 jogadores</span>
+        <span>•</span><span>🇧🇷 Brasil</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="stage">
+    <div class="quiz-shell">
+      <div class="progress-row">
+        <span id="progressLabel">Pergunta 1 de 8</span>
+        <span id="streakLabel" class="streak hidden">🔥 <span id="streakCount">0</span></span>
+      </div>
+      <div class="progress-bar"><div id="progressFill"></div></div>
+      <div id="questionContainer"></div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section id="result" class="stage">
+    <div class="card center glow-magenta">
+      <div class="result-icon" id="resultIcon">👑</div>
+      <h2 class="grad-tiktok title-xl" id="resultTitle">TikToker Supremo</h2>
+      <p class="bold mb-sm" id="resultSubtitle"></p>
+      <p class="muted small mb" id="resultDesc"></p>
+      <div class="score-box">
+        <div><span class="muted tiny">Sua pontuação</span><div class="score-num" id="scoreNum">0</div></div>
+        <div class="divider"></div>
+        <div><span class="muted tiny">Melhor sequência</span><div class="score-num gold" id="streakNum">0🔥</div></div>
+      </div>
+      <button class="cta-btn pulse" id="redeemBtn">🎁 RESGATAR PRÊMIOS!</button>
+      <p class="tiny muted mt">Você desbloqueou produtos exclusivos</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="stage">
+    <div class="products-head">
+      <div class="trophy">🏆</div>
+      <h2 class="grad-gold title-lg">Parabéns! Escolha seu prêmio</h2>
+      <p class="muted small">Selecione o produto que deseja resgatar gratuitamente</p>
+      <div class="timer-pill">⏰ Oferta expira em <span id="timer">10:00</span></div>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+    <p class="tiny muted center mt">✓ Frete grátis  •  ✓ Entrega rápida  •  ✓ Garantia oficial</p>
+  </section>
+</main>
+
+<script src="quiz.js"></script>
+</body>
+</html>
