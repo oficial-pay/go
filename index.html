@@ -16,14 +16,22 @@
 <main class="app">
   <!-- LANDING -->
   <section id="landing" class="stage active">
-    <div class="logo-wrap">
-      <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <div class="logo-wrap tiktok-logo-anim">
+      <svg width="130" height="130" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-label="TikTok">
         <defs>
-          <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="logoGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="6" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
         </defs>
-        <text x="50%" y="58%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="78" fill="#25F4EE" filter="url(#glow)" transform="translate(-3,0)">d</text>
-        <text x="50%" y="58%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="78" fill="#FE2C55" filter="url(#glow)" transform="translate(3,0)">d</text>
-        <text x="50%" y="58%" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="78" fill="#fff">d</text>
+        <g filter="url(#logoGlow)">
+          <path fill="#FE2C55" transform="translate(-6,6)"
+            d="M168 24c0 26 22 48 48 48v32c-18 0-35-6-48-15v68c0 35-28 63-63 63s-63-28-63-63 28-63 63-63v32c-17 0-31 14-31 31s14 31 31 31 31-14 31-31V24h32z"/>
+          <path fill="#25F4EE" transform="translate(6,-6)"
+            d="M168 24c0 26 22 48 48 48v32c-18 0-35-6-48-15v68c0 35-28 63-63 63s-63-28-63-63 28-63 63-63v32c-17 0-31 14-31 31s14 31 31 31 31-14 31-31V24h32z"/>
+          <path fill="#ffffff"
+            d="M168 24c0 26 22 48 48 48v32c-18 0-35-6-48-15v68c0 35-28 63-63 63s-63-28-63-63 28-63 63-63v32c-17 0-31 14-31 31s14 31 31 31 31-14 31-31V24h32z"/>
+        </g>
       </svg>
     </div>
 
@@ -75,10 +83,11 @@
 
   <!-- RESULT -->
   <section id="result" class="stage">
-    <div class="card center glow-magenta">
-      <div class="result-icon" id="resultIcon">👑</div>
+    <div class="card center glow-magenta result-card">
+      <div class="result-badge"><span id="resultIcon">👑</span></div>
+      <div class="level-pill" id="levelPill">⭐ NÍVEL DESBLOQUEADO</div>
       <h2 class="grad-tiktok title-xl" id="resultTitle">TikToker Supremo</h2>
-      <p class="bold mb-sm" id="resultSubtitle"></p>
+      <p class="bold mb-sm result-sub" id="resultSubtitle"></p>
       <p class="muted small mb" id="resultDesc"></p>
       <div class="score-box">
         <div><span class="muted tiny">Sua pontuação</span><div class="score-num" id="scoreNum">0</div></div>
@@ -86,7 +95,7 @@
         <div><span class="muted tiny">Melhor sequência</span><div class="score-num gold" id="streakNum">0🔥</div></div>
       </div>
       <button class="cta-btn pulse" id="redeemBtn">🎁 RESGATAR PRÊMIOS!</button>
-      <p class="tiny muted mt">Você desbloqueou produtos exclusivos</p>
+      <p class="tiny muted mt">✨ Você desbloqueou produtos exclusivos</p>
     </div>
   </section>
 

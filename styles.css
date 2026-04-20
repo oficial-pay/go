@@ -23,7 +23,9 @@ body{min-height:100vh;overflow-x:hidden;position:relative}
 .stage.active{display:flex;flex-direction:column;align-items:center}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
-.logo-wrap{margin:16px 0 24px}
+.logo-wrap{margin:16px 0 24px;display:flex;justify-content:center}
+.tiktok-logo-anim svg{filter:drop-shadow(0 0 30px rgba(254,44,85,.45)) drop-shadow(0 0 20px rgba(37,244,238,.35));animation:logoFloat 4s ease-in-out infinite}
+@keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:24px;width:100%}
 .center{text-align:center}
 .glow-magenta{box-shadow:0 20px 60px -20px rgba(254,44,85,.4)}
@@ -86,7 +88,11 @@ body{min-height:100vh;overflow-x:hidden;position:relative}
 .txt-input:focus{outline:none;border-color:var(--pink)}
 
 /* Result */
-.result-icon{font-size:72px;margin-bottom:8px}
+.result-card{padding-top:32px;background:linear-gradient(180deg,rgba(254,44,85,.08),rgba(37,244,238,.04) 60%,var(--card))}
+.result-badge{width:104px;height:104px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:56px;background:radial-gradient(circle at 30% 30%,#FE2C55,#7a1530);box-shadow:0 0 40px rgba(254,44,85,.6),inset 0 0 20px rgba(0,0,0,.3);animation:badgePulse 2.5s ease-in-out infinite}
+@keyframes badgePulse{0%,100%{transform:scale(1);box-shadow:0 0 40px rgba(254,44,85,.6),inset 0 0 20px rgba(0,0,0,.3)}50%{transform:scale(1.05);box-shadow:0 0 60px rgba(254,44,85,.85),inset 0 0 20px rgba(0,0,0,.3)}}
+.level-pill{display:inline-block;padding:6px 14px;border-radius:999px;background:rgba(255,215,0,.12);border:1.5px solid rgba(255,215,0,.45);color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.5px;margin-bottom:12px}
+.result-sub{font-size:15px;color:var(--cyan)}
 .score-box{display:flex;align-items:center;justify-content:space-around;background:#16161b;border:1px solid var(--border);border-radius:16px;padding:16px;margin:20px 0}
 .score-num{font-size:28px;font-weight:900;color:var(--pink);margin-top:4px}
 .score-num.gold{color:var(--gold)}
